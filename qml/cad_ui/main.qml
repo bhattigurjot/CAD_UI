@@ -121,51 +121,6 @@ ApplicationWindow {
         }
     }
 
-    toolBar: ToolBar {
-        id: layerToolbar
-        width: parent.width
-
-        RowLayout {
-            anchors.fill: parent
-            ToolButton {
-                implicitWidth: 100
-                text: "Layer 1"
-
-                //onHoveredChanged: opacity=0
-            }
-            ToolButton {
-                implicitWidth: 100
-                text: "Layer 2"
-            }
-            ToolButton {
-                implicitWidth: 100
-                text: "Layer 3"
-            }
-            Item {Layout.fillWidth: true}
-        }
-    }
-
-        ColumnLayout {
-            anchors.fill: parent
-            ToolButton {
-                implicitWidth: 100
-                text: "Layer 1"
-
-                //onHoveredChanged: opacity=0
-            }
-            ToolButton {
-                implicitWidth: 100
-                text: "Layer 2"
-            }
-            ToolButton {
-                implicitWidth: 100
-                text: "Layer 3"
-            }
-            Item {Layout.fillWidth: true}
-        }
-
-
-
     /*
     toolBar: ToolBar {
         id: toolbar
