@@ -1,5 +1,5 @@
 import QtQuick 2.0
-import QtQuick.Controls 1.2
+import QtQuick.Controls 1.1
 import QtQuick.Layouts 1.1
 
 ApplicationWindow {
@@ -68,15 +68,51 @@ ApplicationWindow {
         }
         Menu {
             title: "&Draw"
-            MenuItem { action: aboutAction }
+            MenuItem { action: pointsAction }
+            MenuItem { action: lineAction }
+            MenuItem { action: arcAction }
+            MenuItem { action: circleAction }
+            MenuItem { action: ellipseAction }
+            MenuItem { action: splineAction }
+            MenuItem { action: polylineAction }
+            MenuItem { action: mtextAction }
+            MenuItem { action: textAction }
+            MenuItem { action: hatchAction }
+            MenuItem { action: insertImageAction }
         }
         Menu {
             title: "&Modify"
-            MenuItem { action: aboutAction }
+            MenuItem { action: moveCopyAction }
+            MenuItem { action: rotateAction }
+            MenuItem { action: scaleAction }
+            MenuItem { action: mirrorAction }
+            MenuItem { action: moveAndRotateAction }
+            MenuItem { action: rotateTwoAction }
+            MenuItem { action: revertDirectionAction }
+            MenuItem { action: trimAction }
+            MenuItem { action: trimTwoAction }
+            MenuItem { action: lengthenAction }
+            MenuItem { action: bevelAction }
+            MenuItem { action: roundAction }
+            MenuItem { action: divideAction }
+            MenuItem { action: stretchAction }
+            MenuItem { action: propertiesAction }
+            MenuItem { action: attributesAction }
+            MenuItem { action: deleteAction }
+            MenuItem { action: deleteSelectedAction }
+            MenuItem { action: explodeAction }
+            MenuItem { action: alignAction }
         }
         Menu {
             title: "&Dimension"
-            MenuItem { action: aboutAction }
+            MenuItem { action: alignedAction }
+            MenuItem { action: linearAction }
+            MenuItem { action: horizontalAction }
+            MenuItem { action: verticalAction }
+            MenuItem { action: radialAction }
+            MenuItem { action: diametricAction }
+            MenuItem { action: angularAction }
+            MenuItem { action: leaderAction }
         }
         Menu {
             title: "&Help"
@@ -108,6 +144,26 @@ ApplicationWindow {
             Item {Layout.fillWidth: true}
         }
     }
+
+        ColumnLayout {
+            anchors.fill: parent
+            ToolButton {
+                implicitWidth: 100
+                text: "Layer 1"
+
+                //onHoveredChanged: opacity=0
+            }
+            ToolButton {
+                implicitWidth: 100
+                text: "Layer 2"
+            }
+            ToolButton {
+                implicitWidth: 100
+                text: "Layer 3"
+            }
+            Item {Layout.fillWidth: true}
+        }
+
 
 
     /*
@@ -455,6 +511,391 @@ ApplicationWindow {
     Action {
         id: deselLayerAction
         text: "&(De-)select Layer"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    /* Actions for Draw Menu*/
+     Action {
+        id: pointsAction
+        text: "&Points"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: lineAction
+        text: "&Line"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: arcAction
+        text: "&Arc"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: circleAction
+        text: "&Circle"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: ellipseAction
+        text: "&Ellipse"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: splineAction
+        text: "&Spline"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: polylineAction
+        text: "&Polyline"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: mtextAction
+        text: "&MText"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: textAction
+        text: "&Text"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: hatchAction
+        text: "&Hatch"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: insertImageAction
+        text: "&Insert Image"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+
+    /* Actions for Modify Menu*/
+    Action {
+        id: moveCopyAction
+        text: "&Move/Copy"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: rotateAction
+        text: "&Rotate"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: scaleAction
+        text: "&Scale"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: mirrorAction
+        text: "&Mirror"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: moveAndRotateAction
+        text: "&Move and Rotate"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: rotateTwoAction
+        text: "&Rotate Two"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: revertDirectionAction
+        text: "&Revert Direction"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: trimAction
+        text: "&Trim"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: trimTwoAction
+        text: "&Trim Two"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: lengthenAction
+        text: "&Lengthen"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+    Action {
+        id: bevelAction
+        text: "&Bevel"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: roundAction
+        text: "&Round"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: divideAction
+        text: "&Divide"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: stretchAction
+        text: "&Stretch"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: propertiesAction
+        text: "&Properties"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+    Action {
+        id: attributesAction
+        text: "&Attributes"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: deleteAction
+        text: "&Delete"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: deleteSelectedAction
+        text: "&Delete Selected"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: explodeAction
+        text: "&Explode"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    Action {
+        id: alignAction
+        text: "&Align"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+
+    /* Actions for Dimension Menu*/
+    Action {
+        id: alignedAction
+        text: "&Aligned"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+    Action {
+        id: linearAction
+        text: "&Linear"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+    Action {
+        id: horizontalAction
+        text: "&Horizontal"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+    Action {
+        id: verticalAction
+        text: "&Vertical"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+    Action {
+        id: radialAction
+        text: "&Radial"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+    Action {
+        id: diametricAction
+        text: "&Diametric"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+    Action {
+        id: angularAction
+        text: "&Angular"
+        enabled: false
+        //shortcut: StandardKey.New
+        //iconSource: "images/document-open.png"
+        //onTriggered: fileDialog.open()
+        //tooltip: "New an image"
+    }
+    Action {
+        id: leaderAction
+        text: "&Leader"
         enabled: false
         //shortcut: StandardKey.New
         //iconSource: "images/document-open.png"
